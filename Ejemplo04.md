@@ -86,6 +86,14 @@ Para exponer el servicio al exterior mapeando puertos:
 ```bash
 docker service create --name Servidorweb --replicas 6 --publish 8085:80 nginx
 ```
+
+<div align="center">
+  <img src="imagenes/imagen04.png" alt="Nginx - linux" width="600">
+  <br>
+  <sub><b>Figura 4:</b> Creación de las Replicas Servidor Web.</sub>
+  <br>
+</div>
+
 * **`--replicas 6`**: Levanta 6 instancias/contenedores idénticos distribuidos en el clúster.
 * **`--publish 8085:80`**: Asigna el puerto `8085` de la máquina al puerto `80` interno de NGINX.
 * **Balanceo Ingress**: Cualquier petición entrante al puerto `8085` será distribuida automáticamente entre las 6 réplicas.
@@ -96,7 +104,22 @@ Para verificar el estado global de los servicios activos:
 ```bash
 docker service ls
 ```
+
+<div align="center">
+  <img src="imagenes/imagen05.png" alt="Nginx - linux" width="600">
+  <br>
+  <sub><b>Figura 5:</b>Mostrando las Replicas del Servidor Web.</sub>
+  <br>
+</div>
+
 * **Explicación**: Muestra el total de réplicas en ejecución (ejemplo: `6/6`).
+
+<div align="center">
+  <img src="imagenes/imagen06.png" alt="Nginx - linux" width="600">
+  <br>
+  <sub><b>Figura 6:</b>Mostrando las Replicas del Servidor Web.</sub>
+  <br>
+</div>
 
 Para ver en tiempo real el tráfico y logs unificados de todas las réplicas:
 
