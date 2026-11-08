@@ -1,22 +1,8 @@
-# 🐝 Guía de Laboratorio: Docker Swarm y Escalabilidad
+# 🐝Ejemplo 04: Docker Swarm y Escalabilidad
 
-Documentación técnica detallada sobre la inicialización, administración y escalado de clústeres de contenedores con **Docker Swarm**, basada en la guía práctica de laboratorio.
+En el ejemplo se vera la administración y escalado de clústeres de contenedores con **Docker Swarm**.
 
----
-
-## 📌 1. Marco Teórico: ¿Qué es Docker Swarm?
-
-**Docker Swarm** es la herramienta nativa de orquestación de contenedores integrada directamente en el Docker Engine. A diferencia de soluciones más complejas como Kubernetes, Swarm no requiere instalaciones adicionales y se gestiona mediante la misma CLI de Docker.
-
-### 🌟 Ventajas Clave
-* **Escalabilidad**: Posibilidad de aumentar o disminuir réplicas de servicios dinámicamente.
-* **Alta Disponibilidad**: Si un nodo falla, Swarm redistribuye automáticamente los contenedores (tareas) a otros nodos activos.
-* **Balanceo de Carga**: Distribuye automáticamente el tráfico entrante entre los contenedores réplica.
-* **Seguridad Nativa**: Cifra las comunicaciones entre nodos de manera automática usando TLS.
-
----
-
-## 🚀 2. Administración Básica del Clúster Swarm
+## 🚀 1. Administración Básica del Clúster Swarm
 
 ### Paso 2.1: Verificar Disponibilidad del Comando
 Antes de iniciar, verificamos que Docker Swarm está disponible en el sistema.
@@ -32,6 +18,12 @@ Identificamos la IP de la interfaz de red principal donde escuchará el clúster
 ```bash
 ifconfig
 ```
+Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos windows).
+
+```bash
+ipconfig
+```
+
 * **Explicación**: Permite ubicar la IP (ej. `10.0.2.15` en la interfaz `enp0s3`) que usaremos para que otros nodos se conecten.
 
 ### Paso 2.3: Inicializar el Clúster Swarm (Nodo Manager)
