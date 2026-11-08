@@ -98,7 +98,7 @@ docker service create --name Servidorweb --replicas 6 --publish 8085:80 nginx
 * **`--publish 8085:80`**: Asigna el puerto `8085` de la máquina al puerto `80` interno de NGINX.
 * **Balanceo Ingress**: Cualquier petición entrante al puerto `8085` será distribuida automáticamente entre las 6 réplicas.
 
-### Paso 3.3: Inspeccionar Servicios y Logs
+### Paso 2.2: Inspeccionar Servicios y Logs
 Para verificar el estado global de los servicios activos:
 
 ```bash
@@ -126,17 +126,33 @@ Para ver en tiempo real el tráfico y logs unificados de todas las réplicas:
 ```bash
 docker service logs Servidorweb -f
 ```
+
+<div align="center">
+  <img src="imagenes/imagen07.png" alt="Nginx - linux" width="600">
+  <br>
+  <sub><b>Figura 7:</b>Log en tiempo real.</sub>
+  <br>
+</div>
+
 * **`-f` *(Follow)***: Mantiene la salida abierta escuchando nuevas peticiones enviadas al balanceador.
 
-### Paso 3.4: Probar el Balanceo de Carga con `curl`
+### Paso 2.3: Probar el Balanceo de Carga con `curl`
 Ejecutando peticiones repetidas al puerto expuesto:
 
 ```bash
 curl localhost:8085
 ```
+
+<div align="center">
+  <img src="imagenes/imagen08.png" alt="Nginx - linux" width="600">
+  <br>
+  <sub><b>Figura 8:</b>Comando curl en acción.</sub>
+  <br>
+</div>
+
 * **Explicación**: Al revisar los logs (`docker service logs`), se observará cómo diferentes contenedores (`Servidorweb.1`, `Servidorweb.2`, ..., `Servidorweb.6`) atienden las solicitudes de manera alternada.
 
-### Paso 3.5: Escalar la Aplicación Dinámicamente
+### Paso 2.4: Escalar la Aplicación Dinámicamente
 Si la demanda aumenta, podemos escalar de 6 a 12 réplicas sin tiempo de parada (*zero downtime*):
 
 ```bash
@@ -155,14 +171,14 @@ Para reducir el número de réplicas:
 docker service scale my-web-service=2
 ```
 
-### Paso 3.6: Inspeccionar las Tareas Internas de un Servicio
+### Paso 2.5: Inspeccionar las Tareas Internas de un Servicio
 
 ```bash
 docker service ps my-web-service
 ```
 * **Explicación**: Detalla el nodo donde se está ejecutando cada contenedor específico de ese servicio y su estado actual (`Running`).
 
-### Paso 3.7: Eliminar un Servicio
+### Paso 2.6: Eliminar un Servicio
 
 ```bash
 docker service rm Servidorweb
@@ -170,42 +186,6 @@ docker service rm Servidorweb
 * **Explicación**: Elimina el servicio y detiene de inmediato todas sus réplicas activas.
 
 ---
-
-## 📝 4. Solución a los Ejercicios de la Guía
-
-### Ejercicio 1: Iniciar nodo Manager y obtener token worker
-```bash
-# 1. Inicializar enjambre
-docker swarm init --advertise-addr <TU_IP_LOCAL>
-
-# 2. Generar el token para trabajadores
-docker swarm join-token worker
-```
-
-### Ejercicio 2: Servicio Apache expuesto en el puerto 9876
-```bash
-docker service create --name apache-service --publish 9876:80 httpd
-```
-* *Verificación*: Entrar en el navegador a `http://localhost:9876` o ejecutar `curl http://localhost:9876`.
-
-### Ejercicio 3: Evidencia de logs con réplicas
-```bash
-# 1. Escalar servicio Apache a 4 réplicas
-docker service scale apache-service=4
-
-# 2. Monitorear logs en tiempo real
-docker service logs -f apache-service
-```
-
----
-
-## ❓ 5. Cuestionario de Evaluación (Docker Swarm)
-
-1. **¿Cómo permite Docker Swarm la orquestación de contenedores?**  
-   Gestiona un clúster de motores Docker convirtiéndolos en un único motor virtual. Administra la distribución de cargas, el ciclo de vida de los contenedores, la autorrecuperación (*self-healing*) en caso de fallos y el balanceo de tráfico dinámico.
-
-2. **¿Qué es un nodo Manager en Docker Swarm?**  
-   Es el nodo encargado de tomar las decisiones de orquestación, mantener el estado deseado del clúster, planificar el despliegue de servicios en los nodos trabajadores (*workers*) y gestionar la seguridad del clúster.
 
 3. **¿Cómo escalarías un servicio en Docker Swarm?**  
    Utilizando el comando `docker service scale nombre_servicio=NUMERO_REPLICAS`.
