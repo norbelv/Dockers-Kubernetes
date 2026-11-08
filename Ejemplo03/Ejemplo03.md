@@ -136,6 +136,13 @@ CREATE TABLE IF NOT EXISTS usuarios (
 
 ## 🧪 Prueba de Funcionamiento
 
-1. Abrir un navegador de preferencia e ingresar a: `http://localhost:8080`.
-2. Completar el formulario con Nombre y Apellido.
-3. Al hacer clic en **Guardar en MySQL**, el script `guardar.php` realiza un `INSERT` en la base de datos y redirige a `index.php`, mostrando la lista actualizada de registros consultados mediante la extensión `mysqli`.
+1. Abre tu terminal en la carpeta del proyecto.
+2. Levanta la aplicación completa con un solo comando
+
+```bash
+docker-compose up -d --build
+```
+   
+4. Abrir un navegador de preferencia e ingresar a: `http://localhost:8080`.
+5. Completar el formulario con Nombre y Apellido.
+6. Al hacer clic en **Guardar en MySQL**, el script `guardar.php` realiza un `INSERT` en la base de datos y redirige a `index.php`, mostrando la lista actualizada de registros consultados mediante la extensión `mysqli`.
