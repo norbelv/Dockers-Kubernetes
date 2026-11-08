@@ -16,6 +16,14 @@ Documentación detallada paso a paso para la creación de: manifiestos YAML, com
 
 ---
 
+<div align="center">
+  <img src="imagenes/imagen09.png" alt="escalado kubernetes" width="600">
+  <br>
+  <sub><b>Figura 09:</b> Docker Desktop en Kubernetes.</sub>
+ <br>
+</div>
+
+
 ### Paso 1.2: Verificación del Contexto y del Clúster
 
 #### 1. Consultar y cambiar el contexto activo:
@@ -139,6 +147,14 @@ Incrementa las réplicas del deployment a 3 desde la terminal:
 kubectl scale deployment nginx-deployment --replicas=3
 ```
 
+<div align="center">
+  <img src="imagenes/imagen10.png" alt="escalado kubernetes" width="600">
+  <br>
+  <sub><b>Figura 10:</b> Escalado en Kubernetes.</sub>
+ <br>
+</div>
+
+
 Verifica la creación de las 3 réplicas:
 
 ```powershell
@@ -161,6 +177,14 @@ kubectl get pods
    kubectl get pods
    ```
 * **Observación**: Notarás que el Pod eliminado ya no está, pero Kubernetes creó uno nuevo de forma automática en pocos segundos para mantener la regla declarada de 3 réplicas.
+
+
+<div align="center">
+  <img src="imagenes/imagen11.png" alt="Auto-reparado kubernetes" width="600">
+  <br>
+  <sub><b>Figura 11:</b> Auto-reparado kubernetes.</sub>
+ <br>
+</div>
 
 ---
 
