@@ -151,3 +151,9 @@ http://localhost:8080
 
 5. Completar el formulario con Nombre y Apellido.
 6. Al hacer clic en **Guardar en MySQL**, el script `guardar.php` realiza un `INSERT` en la base de datos y redirige a `index.php`, mostrando la lista actualizada de registros consultados mediante la extensión `mysqli`.
+7. Para detener todos los contenedores ejecutar:
+
+```bash
+docker-compose down
+```
+
