@@ -39,11 +39,6 @@ Para convertir la máquina actual en el nodo administrador (**Manager Leader**):
 ```bash
 docker swarm init --advertise-addr 10.0.2.15
 ```
-<div align="center">
-  <img src="imagenes/imagen03.png" alt="iniciamos docker swarm - linux" width="600">
-  <br>
-  <sub><b>Figura 1:</b> Iniciamos docker swarm.</sub>
-</div>
 
 
 * **`docker swarm init`**: Activa el modo Swarm en el motor Docker local.
@@ -78,17 +73,7 @@ docker swarm leave --force
 
 ## 📈 2. Creación y Escalabilidad de Servicios
 
-### Paso 3.1: Desplegar un Servicio Web Simple
-Creamos un servicio básico de Tomcat en el clúster.
-
-```bash
-sudo docker service create --name my-web-service tomcat
-```
-* **`docker service create`**: Crea un servicio administrado en el clúster en lugar de un contenedor individual.
-* **`--name my-web-service`**: Asigna el nombre al servicio.
-* **`tomcat`**: Imagen base de Docker Hub.
-
-### Paso 3.2: Desplegar un Servicio Publicando Puertos
+### Paso 2.1: Desplegar un Servicio Publicando Puertos
 Para exponer el servicio al exterior mapeando puertos:
 
 ```bash
