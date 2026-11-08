@@ -36,7 +36,7 @@ docker swarm init --advertise-addr 10.0.2.15
 * **`--advertise-addr`**: Especifica la dirección IP que los demás nodos (workers) usarán para comunicarse con este nodo administrador.
 * **Resultado**: Se genera un **token de unión** único (`SWMTKN-1-...`).
 
-### Paso 2.4: Obtener Token para Nodos Trabajadores (Workers)
+### Paso 1.4: Obtener Token para Nodos Trabajadores (Workers)
 Si necesitas agregar más máquinas al clúster en el futuro como nodos de trabajo:
 
 ```bash
@@ -44,7 +44,7 @@ docker swarm join-token worker
 ```
 * **Explicación**: Imprime la instrucción exacta y el token de seguridad que se debe ejecutar en los nodos secundarios para sumarse al enjambre.
 
-### Paso 2.5: Listar Nodos del Clúster
+### Paso 1.5: Listar Nodos del Clúster
 Para verificar qué máquinas forman parte del clúster actual:
 
 ```bash
@@ -52,7 +52,7 @@ docker node ls
 ```
 * **Explicación**: Muestra el ID, nombre de host, estado (`Ready`), disponibilidad (`Active`) y rol del nodo (`Leader` para el Manager principal).
 
-### Paso 2.6: Desactivar o Abandonar el Clúster
+### Paso 1.6: Desactivar o Abandonar el Clúster
 Si deseas desmontar el nodo o salir del clúster:
 
 ```bash
@@ -62,7 +62,7 @@ docker swarm leave --force
 
 ---
 
-## 📈 3. Creación y Escalabilidad de Servicios
+## 📈 2. Creación y Escalabilidad de Servicios
 
 ### Paso 3.1: Desplegar un Servicio Web Simple
 Creamos un servicio básico de Tomcat en el clúster.
