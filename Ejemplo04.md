@@ -18,7 +18,7 @@ Identificamos la IP de la interfaz de red principal donde escuchará el clúster
 ```bash
 ifconfig
 ```
-Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos **windows**).
+Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos **Windows**).
 
 ```bash
 ipconfig
@@ -26,7 +26,7 @@ ipconfig
 
 * **Explicación**: Permite ubicar la IP (ej. `10.0.2.15` en la interfaz `enp0s3`) que usaremos para que otros nodos se conecten.
 
-### Paso 2.3: Inicializar el Clúster Swarm (Nodo Manager)
+### Paso 1.3: Inicializar el Clúster Swarm (Nodo Manager)
 Para convertir la máquina actual en el nodo administrador (**Manager Leader**):
 
 ```bash
