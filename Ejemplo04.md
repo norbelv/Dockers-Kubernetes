@@ -18,6 +18,13 @@ Identificamos la IP de la interfaz de red principal donde escuchará el clúster
 ```bash
 ifconfig
 ```
+
+<div align="center">
+  <img src="imagenes/imagen02.png" alt="ifconfig - linux" width="600">
+  <br>
+  <sub><b>Figura 1:</b> Comando ifconfig linux.</sub>
+</div>
+
 Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos **Windows**).
 
 ```bash
