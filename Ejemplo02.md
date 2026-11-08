@@ -5,7 +5,7 @@
 El comando `docker build` sirve para procesar las instrucciones de un archivo `Dockerfile` y construir una **imagen personalizada de Docker**.
 **Ojo** tiene que estar todo en una misma carpeta
 
-### Ejemplo de uso:
+## Ejemplo de uso:
 ```bash
 docker build -t mi-web-cip .
 ```
@@ -16,7 +16,13 @@ docker build -t mi-web-cip .
 * **`-t mi-web-cip` *(Tag / Etiqueta)***: Asigna un nombre personalizado (y opcionalmente una versión) a la imagen generada.
 * **`.` *(Contexto de construcción)***: Representa el directorio actual. Le indica a Docker que busque el `Dockerfile` y sus archivos adjuntos (`index.html`, `styles.css`, etc.) en esa carpeta.
 
----
+Una vez creada la imagen ahora creamos en contenedor con la imagen construida personalizada.
+
+## Ejemplo de uso:
+```bash
+docker run -d -p 9876:80 --name contenedor-cip mi-web-cip
+```
+
 
 ## 📊 Diferencia clave entre `docker build` y `docker run`
 
