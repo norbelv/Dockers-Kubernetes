@@ -4,7 +4,7 @@ Documentación detallada paso a paso para la creación de: manifiestos YAML, com
 
 ---
 
-## 🚀 Configuración del Entorno de Kubernetes
+## 🚀 Actividad 1: Configuración del Entorno de Kubernetes
 
 ### Paso 1.1: Habilitar Kubernetes en Docker Desktop
 1. Abrir la interfaz gráfica de **Docker Desktop**.
