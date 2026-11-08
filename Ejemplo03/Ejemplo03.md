@@ -143,6 +143,11 @@ CREATE TABLE IF NOT EXISTS usuarios (
 docker-compose up -d --build
 ```
    
-4. Abrir un navegador de preferencia e ingresar a: `http://localhost:8080`.
+3. Abrir un navegador de preferencia e ingresar a: `http://localhost:8080`.
+
+```bash
+http://localhost:8080
+```
+
 5. Completar el formulario con Nombre y Apellido.
 6. Al hacer clic en **Guardar en MySQL**, el script `guardar.php` realiza un `INSERT` en la base de datos y redirige a `index.php`, mostrando la lista actualizada de registros consultados mediante la extensión `mysqli`.
