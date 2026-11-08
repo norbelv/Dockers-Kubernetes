@@ -43,7 +43,7 @@ wsl --install
    <p align="center">
      <img src="imagenes/imagen01.png" alt="Pantalla de instalación" width="650">
       <br>
-  <sub><b>Figura 1:</b> Búsqueda de Docker Desktop en el navegador.</sub>
+  <sub align="center"><b>Figura 1:</b> Búsqueda de Docker Desktop en el navegador.</sub>
    </p>
      
    - Haz clic en **"Download for Windows"** para obtener el archivo `Docker Desktop Installer.exe`.
