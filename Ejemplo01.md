@@ -19,6 +19,14 @@ docker run -d -p 9876:80 nginx
   * **`80`**: Puerto interno dentro del contenedor donde escucha el servicio (en este caso, NGINX).
 * **`nginx`**: Nombre de la imagen oficial de Docker Hub utilizada para levantar el servicio.
 
+### Detenemos en contenedor
 
-   
+```powershell
+docker stop ID
+```
+### Eliminamos el contenedor
+
+```powershell
+docker rm ID
+```
 
