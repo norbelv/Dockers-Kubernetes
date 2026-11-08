@@ -4,7 +4,7 @@ En el ejemplo se vera la administración y escalado de clústeres de contenedore
 
 ## 🚀 1. Administración Básica del Clúster Swarm
 
-### Paso 2.1: Verificar Disponibilidad del Comando
+### Paso 1.1: Verificar Disponibilidad del Comando
 Antes de iniciar, verificamos que Docker Swarm está disponible en el sistema.
 
 ```bash
@@ -12,13 +12,13 @@ docker swarm
 ```
 * **Explicación**: Despliega las opciones del subcomando `swarm` (`init`, `join`, etc.).
 
-### Paso 2.2: Obtener la Dirección IP del Nodo
-Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos Linux/Ubuntu).
+### Paso 1.2: Obtener la Dirección IP del Nodo
+Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos **Linux/Ubuntu**).
 
 ```bash
 ifconfig
 ```
-Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos windows).
+Identificamos la IP de la interfaz de red principal donde escuchará el clúster (en entornos **windows**).
 
 ```bash
 ipconfig
