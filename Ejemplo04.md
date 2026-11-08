@@ -39,6 +39,12 @@ Para convertir la máquina actual en el nodo administrador (**Manager Leader**):
 ```bash
 docker swarm init --advertise-addr 10.0.2.15
 ```
+<div align="center">
+  <img src="imagenes/imagen03.png" alt="iniciamos docker swarm - linux" width="600">
+  <br>
+  <sub><b>Figura 1:</b> Iniciamos docker swarm.</sub>
+</div>
+
 * **`docker swarm init`**: Activa el modo Swarm en el motor Docker local.
 * **`--advertise-addr`**: Especifica la dirección IP que los demás nodos (workers) usarán para comunicarse con este nodo administrador.
 * **Resultado**: Se genera un **token de unión** único (`SWMTKN-1-...`).
