@@ -185,10 +185,3 @@ docker service rm Servidorweb
 ```
 * **Explicación**: Elimina el servicio y detiene de inmediato todas sus réplicas activas.
 
----
-
-3. **¿Cómo escalarías un servicio en Docker Swarm?**  
-   Utilizando el comando `docker service scale nombre_servicio=NUMERO_REPLICAS`.
-
-4. **¿Qué comando utilizarías para verificar el estado de un servicio en Docker Swarm?**  
-   `docker service ls` para ver la visión general de réplicas o `docker service ps <nombre_servicio>` para ver los contenedores individuales en cada nodo.
